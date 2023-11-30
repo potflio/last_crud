@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
-    <title>Document</title>
-</head>
-<body>
-    <h1>successfully</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block body %}
+<form class="form-inline">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>Firstname</label>
+        <input type="text" id="firstname" class="form-control" style="width:30%;" required="required"/>
+    </div>    
+    <div class="mb-3">
+        <label>Lastname</label>
+        <input type="text" id="lastname" class="form-control" style="width:30%;" required="required"/>
+    </div>
+    <div class="mb-3">    
+        <button type="button" id="create" class="btn btn-primary">Create</button>
+    </div>
+</form>
+<br />
+<div id="result"></div>	
+{% endblock %}
