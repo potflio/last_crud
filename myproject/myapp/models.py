@@ -5,3 +5,8 @@ class Member(models.Model):
     
     class Meta:  
         db_table = "student"
+# try:
+#     import pymysql
+#     pymysql.install_as_MySQLdb()
+# except:
+#     pass
